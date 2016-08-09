@@ -62,7 +62,7 @@ try {
 ### 設定
 
 インストールして即利用可能であることを是としているため，あまり設定できることは多くありませんが，設定により以下の内容を変更できます．
-**endpointなどは他人に知られるべき情報ではないので，[Dotenv](https://github.com/vlucas/p hpdotenv)などの利用を推奨します．**
+**endpointなどは他人に知られるべき情報ではないので，[Dotenv](https://github.com/vlucas/phpdotenv)などの利用を推奨します．**
 
 1. endpoint…設定したエンドポイントです．デフォルトは`null`です．
 2. channel…メッセージを送信するSlackのチャンネルです．デフォルトは`'#general'`です．`'@user.name'`の様に指定することもできます．
@@ -129,7 +129,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($e instanceof FooException) {
-            $notification = new Notification($e, config('e2slack'));
+            $notification = new Notification($e, config('services.e2slack'));
             $notification->send();
         }
 
